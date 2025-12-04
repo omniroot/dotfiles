@@ -1,37 +1,3 @@
-interface PartitionsConfig {
-	[key: string]: {};
-}
-
-interface InstallSystemConfig {
-	hostname: string;
-	formatDisk: boolean;
-	language?: string;
-	/**
-	 * - Find your timezone in /etc/locale.gen (with UTF-8)
-	 * - Put in this format:
-	 * @example
-	 * locales: ["en_US.UTF-8 UTF-8", "ru_RU.UTF-8 UTF-8"]
-	 */
-	locales: string[];
-	/**
-	 * - Find your timezone in /usr/share/zoneinfo/
-	 * - Put in this format:
-	 * @example
-	 * timezone: "Europe/Moscow"
-	 * timezone: "Brazil"
-	 * timezone: "US/Michigan"
-	 */
-	timezone: string;
-	users: {};
-	packages: string[];
-	bootloader: {};
-	partitions: PartitionsConfig;
-}
-
-interface Config {
-	installSystem: InstallSystemConfig;
-}
-
 const config: Config = {
 	installSystem: {
 		hostname: "omniinstallpc",
