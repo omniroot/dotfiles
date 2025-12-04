@@ -14,7 +14,7 @@
             "style": "folder"
           },
           "template": "{{ .Path }}",
-          "foreground": "#c6c2ea",
+          "foreground": "#f2b7c2",
           "type": "path",
           "style": "powerline"
         },
@@ -45,9 +45,9 @@
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4",
           "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
-          "foreground": "#bee9ff",
+          "foreground": "#eddcff",
           "powerline_symbol": "\ue0b0",
-          "background": "#1b2023",
+          "background": "#211e24",
           "type": "git",
           "style": "powerline",
           "background_templates": [
@@ -63,9 +63,9 @@
             "fetch_version": true
           },
           "template": "{{if .Full }}  {{  .Full }} {{ end }}",
-          "foreground": "#d0e6f2",
+          "foreground": "#ebddf7",
           "powerline_symbol": "\ue0b0",
-          "background": "#354a54",
+          "background": "#4c4357",
           "type": "bun",
           "style": "powerline"
         }

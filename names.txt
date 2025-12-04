@@ -1,0 +1,11 @@
+Aria — Avoid Rebuilding Infinite Abstractions
+Прямо в сердце nix-евангелистов.
+Они такие: «nix — это просто»,
+а ты на фоне: «Я не хочу пересобирать вселенную ради изменения иконки».
+
+Avoid Rebuilding Infinite Abstractions
+
+
+Aria — Actually Readable Installation Approach
+Это для nix-евангелистов, которые две недели объясняют, что
+«ну да, flake это ещё один язык поверх существующего языка поверх nix поверх nix-darwin поверх home-manager, но это просто».

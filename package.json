@@ -2,7 +2,7 @@
   "name": "dotfiles",
   "private": true,
   "scripts": {
-    "start": "bun run ./src/install.ts"
+    "start": "bun run ./lib/aria.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
