@@ -1,0 +1,10 @@
+
+:root {
+
+    --zen-primary-color: {{colors.primary.default.hex}} !important;
+    --zen-main-browser-background: {{colors.surface.default.hex}} !important;
+
+   
+}
+
+

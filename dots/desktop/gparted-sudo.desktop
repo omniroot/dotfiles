@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=GParted (Root)
+Comment=Run GParted as root
+Exec=kitty -e sudo -E /usr/bin/gparted
+Icon=partition
+Terminal=false
+Type=Application
+Categories=System;Utility;
+StartupNotify=true

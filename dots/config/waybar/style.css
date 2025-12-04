@@ -1,0 +1,145 @@
+@import "colors.css";
+/* @import "variables.css"; */
+
+/* == GENERAL == */
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: system-ui, FontAwesome, Fira Code, Roboto, Inter,
+    JetBrainsMono Nerd Font, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  /* transition: all 200ms; */
+}
+
+window#waybar {
+  margin: 0;
+  padding: 0px 0px;
+  background: alpha(@surface, 1);
+}
+
+window#waybar.hidden {
+  background-color: red;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  margin: 0px 5px;
+  padding: 8px 0px;
+}
+
+.modules-center {
+  margin-left: 0px;
+}
+
+/* WIDGETS */
+#workspaces,
+#taskbar,
+#clock,
+#cpu,
+#custom-weather,
+#temperature,
+#custom-updates,
+#tray,
+#language,
+#custom-brightness,
+#custom-theme,
+#backlight,
+#pulseaudio,
+#battery,
+#custom-notifications,
+#custom-powermenu {
+  padding: 4px 16px;
+  margin: 0px 4px;
+  color: @on_surface;
+  color: @on_surface_variant;
+
+  background-color: @surface_container;
+  border-radius: 32px;
+}
+
+#tooltip {
+  color: @on_secondary_container;
+  background-color: @secondary_container;
+}
+
+#workspaces {
+  padding: 4px 6px;
+}
+
+#workspaces button {
+  color: @on_surface;
+  background-color: @surface_container_high;
+  padding: 4px 14px;
+  border-radius: 32px;
+  transition: all 200ms;
+  margin: 0px 2px;
+}
+
+#workspaces button * {
+  font-size: 14px;
+}
+
+#workspaces button.active {
+  padding: 4px 24px;
+  color: @on_primary;
+  background-color: @primary;
+}
+
+/* not empty and not active */
+#workspaces button:not(.empty):not(.active) {
+  color: @on_secondary_container;
+  background-color: @secondary_container;
+}
+
+#workspaces button:hover,
+#workspaces button.active:hover,
+#workspaces button:not(.empty):not(.active):hover {
+  color: @on_surface_variant;
+  background-color: @surface_variant;
+  box-shadow: none;
+  outline: none;
+}
+
+/* #clock {
+  color: @on_secondary_container;
+  background-color: @surface_container;
+} */
+
+#taskbar {
+  padding: 4px 6px;
+}
+
+#taskbar button {
+  padding: 0 10px;
+  border-radius: 32px;
+  transition: all 200ms;
+}
+
+#taskbar button.active {
+  padding: 4px 24px;
+  background-color: @secondary_container;
+}
+
+#taskbar button:hover {
+  color: @on_surface_variant;
+  background-color: @surface_variant;
+}
+
+#custom-updates.has-updates {
+  color: @on_secondary_container;
+  background-color: @secondary_container;
+}
+
+#custom-powermenu {
+  padding-left: 16px;
+  padding-right: 12px;
+  border-radius: 50%;
+}
+
+/* MORE */
+#custom-sep {
+  margin: 0px 2px;
+  border-radius: 16px;
+  color: @outline_variant;
+}

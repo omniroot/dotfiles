@@ -1,0 +1,228 @@
+{
+  "layer": "top",
+  "position": "top",
+  "width": "100%",
+  "output": [
+    "eDP-1",
+    "HDMI-A-1"
+  ],
+  "height": 45,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "modules-left": [
+    "hyprland/workspaces",
+    "wlr/taskbar",
+    "custom/weather",
+    "cpu",
+    "temperature"
+  ],
+  "modules-center": [
+    // "custom/sep",
+    "clock"
+    // "custom/sep"
+    // "custom/updates"
+  ],
+  "modules-right": [
+    "tray",
+    "custom/sep",
+    "custom/theme",
+    "hyprland/language",
+    "custom/brightness",
+    "backlight",
+    "pulseaudio",
+    "battery",
+    "custom/sep",
+    "custom/notifications",
+    "custom/powermenu"
+  ],
+  // Left
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 19,
+    // "icon-theme": "Numix-Circle",
+    "tooltip-format": "{app_id}: {title}",
+    "active-first": false,
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "nekobox",
+      "kitty"
+    ]
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10"
+      // "urgent": "",
+      // "active": "",
+      // "default": ""
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": []
+      // "7": [],
+      // "8": []
+      // "9": [],
+      // "10": []
+    },
+    "sort-by-number": true
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "interval": 3
+  },
+  "temperature": {
+    "format": "{temperatureC}° ",
+    "interval": 1
+  },
+  "custom/weather": {
+    "format": "{}",
+    "exec": "~/.local/scripts/weather.sh",
+    "interval": 150
+  },
+  // Right
+  "power-profiles-daemon": {
+    "format": "{icon} ",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  // "custom/brightness": {
+  //   "format": "{} {icon}",
+  //   "exec": "brightnessctl i | grep \"Current brightness\" | awk '{print $4}' | tr -d '()'",
+  //   "exec-on-event": true,
+  //   "on-click": "",
+  //   "on-scroll-up": "brightnessctl set +10%",
+  //   "on-scroll-down": "brightnessctl set 10%-",
+  //   "format-icons": ["", ""]
+  // },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": [
+      ""
+    ],
+    "scroll-step": 2
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        " "
+      ]
+    },
+    "scroll-step": 1,
+    "on-click": "pamixer -t",
+    "on-click-middle": "pavucontrol"
+  },
+  "hyprland/language": {
+    "format": "{short}",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+  },
+  "custom/theme": {
+    "exec": "~/.local/bin/theme.sh",
+    "interval": 2,
+    "return-type": "json",
+    "format": "{text}",
+    "on-click": "~/.local/bin/theme.sh --toggle"
+    // "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+  },
+  "custom/language": {
+    "format": "{short}",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+  },
+  "tray": {
+    "icon-size": 20,
+    "icon-theme": "Numix-Circle",
+    "123": 123,
+    "spacing": 10
+  },
+  "battery": {
+    "bat": "BAT0",
+    "adapter": "BAT0",
+    "interval": 5,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-full": "{capacity}% {icon}",
+    "format-charging": "{capacity}%   ",
+    "format-plugged": "{capacity}%   ",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ]
+  },
+  "clock": {
+    "interval": 60,
+    "format": "{:%H:%M}",
+    "format-alt": "{:%A, %B %d}",
+    "max-length": 50
+  },
+  "custom/powermenu": {
+    "format": " ",
+    "on-click": "wlogout"
+  },
+  "custom/notifications": {
+    "format": "{}  ",
+    "interval": 10,
+    "exec": "dunstctl count | grep \"[[:digit:]]\" -o | tail -1",
+    "on-click": "$TERM --hold -T notifications bash ~/.config/hypr/waybar/notifications.sh",
+    "on-click-middle": "dunstctl history-clear"
+  },
+  "custom/updates": {
+    "format": "{} {icon}",
+    "return-type": "json",
+    "format-icons": {
+      "has-updates": " ",
+      "updated": "󰂪 "
+    },
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300"
+  },
+  "custom/sep": {
+    "format": "|"
+  }
+  //
+}

@@ -1,0 +1,95 @@
+@import "colors.css";
+
+window {
+  font-family: CaskaydiaCove Nerd Font, monospace;
+  font-size: 12pt;
+  color: #cdd6f4;
+  background-color: alpha(@background, 0.7);
+  margin: 10px;
+
+  /* backdrop-filter: blur(20px); */
+}
+
+button {
+  outline-style: none;
+  border: none;
+  border-width: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15%;
+  border: 2px solid transparent;
+  color: @on_surface;
+  text-shadow: none;
+  box-shadow: none;
+  background-color: alpha(@surface, 0.85);
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16pt;
+  border-radius: 64px;
+
+  /* margin: 5px; */
+  transition: box-shadow 200ms ease-in-out, color 300ms,
+    background-color 200ms ease-in-out, background-size 200ms, margin 200ms,
+    border-radius 200ms;
+}
+
+button:hover {
+  color: @on_primary;
+  background-color: alpha(@primary, 0.85);
+  background-size: 20%;
+}
+
+#lock {
+  background-image: image(url("./icons/lock_white.png"));
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+#lock:hover {
+  margin-left: -45px;
+  margin-top: -45px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  border-bottom-left-radius: 32px;
+}
+
+#logout {
+  background-image: image(url("./icons/logout_white.png"));
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+#logout:hover {
+  margin-left: -45px;
+  margin-bottom: -45px;
+  border-top-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  border-bottom-left-radius: 32px;
+}
+
+#shutdown {
+  background-image: image(url("./icons/shutdown_white.png"));
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#shutdown:hover {
+  margin-right: -45px;
+  margin-top: -45px;
+  border-top-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+}
+
+#reboot {
+  background-image: image(url("./icons/reboot_white.png"));
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#reboot:hover {
+  margin-right: -45px;
+  margin-bottom: -45px;
+  border-top-right-radius: 32px;
+  border-bottom-right-radius: 32px;
+  border-bottom-left-radius: 32px;
+}

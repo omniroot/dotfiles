@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Throne
+Exec=/opt/Throne/Throne
+Icon=/opt/Throne/Throne.png
+Type=Application
+Terminal=false
+Categories=Utility;Application;

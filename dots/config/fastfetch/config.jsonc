@@ -1,0 +1,28 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+    "separator": " ",
+    "brightColor": false,
+    "stat": false
+  },
+  "general": {
+    "preRun": "clear"
+  },
+  "logo": {
+    "source": "~/.config/fastfetch/ascii.txt",
+
+    "padding": { "right": 2 }
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "break",
+    "disk",
+    "memory",
+    "uptime",
+    "packages",
+    "break",
+    "colors"
+  ]
+}
