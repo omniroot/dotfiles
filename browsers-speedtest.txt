@@ -1,0 +1,7 @@
+google chrome - 16.1 (+- 0.83)
+vivaldi - 17.1 (+- 1.8)
+helium 17.6 (+- 1.1)
+
+firefox - 15.1 (+- 0.46)
+zen browser 14.5 (+- 0.50)
+

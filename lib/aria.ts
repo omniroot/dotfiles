@@ -7,6 +7,12 @@ console.log("Actually Readable Installation Approach");
 const testConfig: Config = {
 	name: "Arch + Hyprland config",
 	setupSystem: {
+		sddm: {
+			enable: true,
+			wayland: true,
+			themesPath: "./config/sddm/themes/",
+			theme: "omniroot",
+		},
 		packages: {
 			DesktopEnviroment: {
 				dependencies: ["hyprland"],

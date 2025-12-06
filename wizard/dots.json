@@ -1,0 +1,52 @@
+{
+    "dots": [
+        {
+            "source": "./dots/config/kitty",
+            "target": "~/.config/kitty"
+        },
+        {
+            "source": "./dots/config/fastfetch",
+            "target": "~/.config/fastfetch"
+        },
+        {
+            "source": "./dots/config/hypr",
+            "target": "~/.config/hypr"
+        },
+        {
+            "source": "./dots/config/dunst",
+            "target": "~/.config/dunst"
+        },
+        {
+            "source": "./dots/config/matugen",
+            "target": "~/.config/matugen"
+        },
+        {
+            "source": "./dots/config/rofi",
+            "target": "~/.config/rofi"
+        },
+        {
+            "source": "./dots/config/tmux",
+            "target": "~/.config/tmux"
+        },
+        {
+            "source": "./dots/config/waybar",
+            "target": "~/.config/waybar"
+        },
+        {
+            "source": "./dots/config/waypaper",
+            "target": "~/.config/waypaper"
+        },
+        {
+            "source": "./dots/config/wlogout",
+            "target": "~/.config/wlogout"
+        },
+        {
+            "source": "./dots/config/yazi",
+            "target": "~/.config/yazi"
+        },
+        {
+            "source": "./dots/config/zsh",
+            "target": "~/.config/zsh"
+        }
+    ]
+}

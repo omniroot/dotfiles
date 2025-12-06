@@ -46,7 +46,15 @@ interface Dots {
 	target: string;
 }
 
+export interface SDDMConfig {
+	enable: boolean;
+	wayland?: boolean;
+	themesPath?: string;
+	theme?: string;
+}
+
 export interface SetupSystemConfig {
+	sddm: SDDMConfig;
 	packages: Record<string, PacmanPackage>;
 	symlinks: Record<string, Dots>;
 }

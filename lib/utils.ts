@@ -3,6 +3,7 @@ import path from "node:path";
 import { promisify } from "node:util";
 import type { Config, PacmanPackage } from "./aria.types.ts";
 import { l } from "./l.ts";
+import { configureSddm } from "./modules/sddm.ts";
 import { listDir, stow } from "./stow.ts";
 
 const exec = promisify(_exec);
@@ -119,11 +120,19 @@ export const corelib = {
 			}
 		});
 	},
-	createSymlink: ({ source, target }: { source: string; target: string }) => {
-		const sourceDirs = listDir(path.resolve("dots", source));
-		sourceDirs.forEach((sourceDir) => {
-			stow({ source: sourceDir, target: target, dryRun: true });
-		});
+	createSymlink: ({
+		source,
+		target,
+		dryRun,
+	}: {
+		source: string;
+		target: string;
+		dryRun?: boolean;
+	}) => {
+		// const sourceDirs = listDir(path.resolve("dots", source));
+		// sourceDirs.forEach((sourceDir) => {
+		stow({ source: source, target: target, dryRun: dryRun });
+		// });
 	},
 };
 
@@ -191,12 +200,14 @@ export const arialib = {
 
 export function aria(config: Config) {
 	l("info", `Apply config: ${config.name}`);
-	l("info", "Installing packages");
-	Object.entries(config.setupSystem.packages).forEach(
-		([package_name, pacman_package]) => {
-			arialib.installPackage(package_name, pacman_package);
-		},
-	);
+	l("info", "Configure sddm");
+	// configureSddm(config.setupSystem.sddm);
+	// l("info", "Installing packages");
+	// Object.entries(config.setupSystem.packages).forEach(
+	// 	([package_name, pacman_package]) => {
+	// 		arialib.installPackage(package_name, pacman_package);
+	// 	},
+	// );
 	l("info", "Linking dots");
 	Object.entries(config.setupSystem.symlinks).forEach(([name, dots]) => {
 		corelib.createSymlink({ ...dots });
