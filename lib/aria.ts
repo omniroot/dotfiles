@@ -7,6 +7,15 @@ console.log("Actually Readable Installation Approach");
 const testConfig: Config = {
 	name: "Arch + Hyprland config",
 	setupSystem: {
+		yay: {
+			enabled: true
+		},
+		internet: {
+			iwd: {
+				enabled: true
+			},
+			dhcpcd: { enabled: true }
+		},
 		sddm: {
 			enable: true,
 			wayland: true,

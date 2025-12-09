@@ -5,6 +5,9 @@ import type { Config, PacmanPackage } from "./aria.types.ts";
 import { l } from "./l.ts";
 import { configureSddm } from "./modules/sddm.ts";
 import { listDir, stow } from "./stow.ts";
+import { IWDModule } from "./modules/iwd.ts";
+import { DHCPCDModule } from "./modules/dhcpcd.ts";
+import { DNSMASQModule } from "./modules/dnsmasq.ts";
 
 const exec = promisify(_exec);
 
@@ -198,9 +201,59 @@ export const arialib = {
 	},
 };
 
-export function aria(config: Config) {
+export async function installYay() {
+	const isAlreadyInstalled = await corelib.exec(["pacman -Qq | grep yay-bin"]);
+	if (isAlreadyInstalled.result) {
+		console.log("Yay is already installed!");
+		return;
+	}
+
+	const commands = [
+		"rm -rf /tmp/yay-bin",
+		"git clone https://aur.archlinux.org/yay-bin /tmp/yay-bin",
+		"cd /tmp/yay-bin",
+		"makepkg -sric --noconfirm --needed -D /tmp/yay-bin/",
+		"rm -rf /tmp/yay-bin",
+	];
+	commands.forEach((c) => {
+		const output = exec(c);
+		console.log(output);
+	});
+}
+
+export async function getDisributiveName() {
+	const {result, error} = await corelib.exec([
+		`lsb_release -a 2>/dev/null | awk -F':' '/Distributor ID/ {gsub(/^[ \t]+/, "", $2); print $2}'`
+	]) 
+	console.log({result, error});
+	
+	return result
+}
+
+export async function aria(config: Config) {
+	const distributiveName = await getDisributiveName() 
 	l("info", `Apply config: ${config.name}`);
-	l("info", "Configure sddm");
+	l("info", `You use ${distributiveName} distributive`)
+
+	// if (config.setupSystem.yay) {
+	// 	if (config.setupSystem.yay.enabled) {
+	// 		installYay()
+	// 	}
+	// }
+	// l("info", "Configure sddm");
+	if (config.setupSystem.internet) {
+		l("info", "Configure internet");
+		const modules = [
+			new IWDModule(config.setupSystem.internet.iwd),
+			new DHCPCDModule(config.setupSystem.internet.dhcpcd),
+			new DNSMASQModule(config.setupSystem.internet.dnsmasq),
+		]
+
+		modules.map(module => module.apply())
+	}
+
+	// }
+
 	// configureSddm(config.setupSystem.sddm);
 	// l("info", "Installing packages");
 	// Object.entries(config.setupSystem.packages).forEach(
@@ -208,8 +261,8 @@ export function aria(config: Config) {
 	// 		arialib.installPackage(package_name, pacman_package);
 	// 	},
 	// );
-	l("info", "Linking dots");
-	Object.entries(config.setupSystem.symlinks).forEach(([name, dots]) => {
-		corelib.createSymlink({ ...dots });
-	});
+	// l("info", "Linking dots");
+	// Object.entries(config.setupSystem.symlinks).forEach(([name, dots]) => {
+	// 	corelib.createSymlink({ ...dots });
+	// });
 }

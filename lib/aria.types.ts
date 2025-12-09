@@ -1,3 +1,7 @@
+import type { DHCPCDConfig } from "./modules/dhcpcd";
+import type { DNSMASQConfig } from "./modules/dnsmasq";
+import type { IWDConfig } from "./modules/iwd";
+
 export interface PartitionsConfig {
 	[key: string]: {};
 }
@@ -53,7 +57,18 @@ export interface SDDMConfig {
 	theme?: string;
 }
 
+export interface InternetConfig {
+	
+	iwd?: IWDConfig | undefined
+	dhcpcd?: DHCPCDConfig | undefined
+	dnsmasq?: DNSMASQConfig | undefined
+} 
+
 export interface SetupSystemConfig {
+	yay?: {
+		enabled:boolean
+	}
+	internet?: InternetConfig
 	sddm: SDDMConfig;
 	packages: Record<string, PacmanPackage>;
 	symlinks: Record<string, Dots>;
