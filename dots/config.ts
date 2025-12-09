@@ -28,6 +28,9 @@ const config: Config = {
 			"git",
 			"micro",
 			"fastfetch", // for test
+			"iwd",
+			"dhcpcd",
+			"dnsmasq",
 			// Drivers
 			// "mesa",
 			// "vulkan-radeon",
