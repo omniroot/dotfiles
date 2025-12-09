@@ -24,7 +24,7 @@ const testConfig: Config = {
 		},
 		packages: {
 			DesktopEnviroment: {
-				dependencies: ["hyprland"],
+				dependencies: ["hyprland, rofi-wayland kitty"],
 				pre_install: [`echo "before hyprland"`],
 				post_install: [`echo "after hyprland"`],
 			},

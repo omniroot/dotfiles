@@ -255,12 +255,12 @@ export async function aria(config: Config) {
 	// }
 
 	// configureSddm(config.setupSystem.sddm);
-	// l("info", "Installing packages");
-	// Object.entries(config.setupSystem.packages).forEach(
-	// 	([package_name, pacman_package]) => {
-	// 		arialib.installPackage(package_name, pacman_package);
-	// 	},
-	// );
+	l("info", "Installing packages");
+	Object.entries(config.setupSystem.packages).forEach(
+		([package_name, pacman_package]) => {
+			arialib.installPackage(package_name, pacman_package);
+		},
+	);
 	// l("info", "Linking dots");
 	// Object.entries(config.setupSystem.symlinks).forEach(([name, dots]) => {
 	// 	corelib.createSymlink({ ...dots });
