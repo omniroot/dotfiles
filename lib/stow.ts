@@ -115,7 +115,7 @@ export function stow(opts: LinkOptions) {
 		if (st.isSymbolicLink()) {
 			const link = fs.readlinkSync(dest);
 			const abs = path.resolve(path.dirname(dest), link);
-
+			
 			if (abs === src) {
 				console.log(`OK: correct symlink exists ${dest}`);
 				return;

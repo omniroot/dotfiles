@@ -2,12 +2,17 @@
   "name": "dotfiles",
   "private": true,
   "scripts": {
-    "start": "bun run ./lib/aria.ts"
+    "start": "bun run ./lib/aria.ts",
+    "test": "bun run ./lib/test.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "@lydell/node-pty": "^1.1.0",
+    "node-pty": "^1.0.0"
   }
 }
