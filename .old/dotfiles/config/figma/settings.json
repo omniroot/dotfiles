@@ -1,0 +1,78 @@
+{
+  "clientId": "7406ac9f-668e-43d0-bdb9-6f7c5d054763",
+  "userId": "",
+  "authedUserIDs": [
+    "1032350618968482545"
+  ],
+  "app": {
+    "logLevel": 1,
+    "lastTimeClearLogFile": 1774019612430,
+    "enableColorSpaceSrgb": false,
+    "visibleNewProjectBtn": true,
+    "useZenity": false,
+    "disableThemes": false,
+    "panelHeight": 40,
+    "saveLastOpenedTabs": true,
+    "exportDir": "/home/omni/Pictures/Figma",
+    "commandSwitches": [
+      {
+        "switch": "enable-gpu-rasterization"
+      },
+      {
+        "switch": "enable-experimental-canvas-features"
+      },
+      {
+        "switch": "use-vulkan"
+      },
+      {
+        "switch": "enable-features",
+        "value": "Vulkan"
+      }
+    ],
+    "fontDirs": [
+      "/usr/share/fonts",
+      "/usr/local/share/fonts",
+      "/run/host/fonts",
+      "/run/host/user-fonts",
+      "/home/omni/.local/share/fonts"
+    ],
+    "recentlyClosedTabs": [
+      {
+        "title": "Diogen",
+        "url": "https://www.figma.com/design/Z8HR357zHAPbxL0FneVsps/Diogen?node-id=0-1&p=f&viewport=1037%2C180%2C0.1&t=AGGAtb1bQhCcBhOj-0"
+      }
+    ],
+    "windowsState": {},
+    "lastOpenedTabs": {},
+    "featureFlags": {
+      "desktop_push_notifs_win": true,
+      "desktop_extension_registry": true,
+      "desktop_shell_allow_focus": true,
+      "desktop_multi_updates": true,
+      "piper_pptx_export": true,
+      "desktop_piper_selected_slides_pdf": true,
+      "desktop_unified_index_v3_dev": true,
+      "desktop_unified_index_v3_rollout": true,
+      "desktop_staging_factory_icon": true,
+      "desktop_icon_tl_v1": true,
+      "desktop_new_icons_v1": true,
+      "desktop_new_rev_icon_v2": true,
+      "desktop_lg_background_unsub": true,
+      "desktop_default_hp_gpu_setting": true,
+      "desktop_lg_exclude_proxy_users": true,
+      "desktop_lg_tab_preview_hover_sub": true
+    },
+    "savedExtensions": [],
+    "themeDropdownOpen": true,
+    "creatorsThemesDropdownOpen": false,
+    "useOldPreviewer": false,
+    "dontShowTutorialCreator": false
+  },
+  "theme": {
+    "currentTheme": "Yaru_Dark"
+  },
+  "ui": {
+    "scalePanel": 1,
+    "scaleFigmaUI": 1
+  }
+}

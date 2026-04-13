@@ -1,0 +1,10 @@
+[Unit]
+Description=Ryzen Silent Tune
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/ryzen-tune.sh --battery
+
+[Install]
+WantedBy=multi-user.target

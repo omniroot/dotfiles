@@ -1,0 +1,16 @@
+{
+  "useCustomColors": true,
+  "showNumbers": true,
+  "forceMegabytes": true,
+  "arrowType": "caret",
+  "minWidth": 0,
+  "byteThresholdActive": 1024,
+  "fontSizeModifier": 1,
+  "iconSizeModifier": 1,
+  "spacingInbetween": 0,
+  "colorSilent": "#251e1d",
+  "colorTx": "#e7bdb4",
+  "colorRx": "#ffb4a5",
+  "colorText": "#e7bdb4",
+  "colorBackground": "#00000000"
+}
